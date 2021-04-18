@@ -1,0 +1,12 @@
+name: LightSleep
+version: 1.0-SNAPSHOT
+main: net.at13.lightsleep.LightSleep
+api-version: 1.16
+authors: [ AT13 ]
+description: Sleep simplification plugin that reduces the need for players to skip the night
+commands:
+  changepercent:
+    description: Changing needed percent of players to sleep
+    usage: /<command>
+    permission: yourplugin.yourcommandpermission
+
