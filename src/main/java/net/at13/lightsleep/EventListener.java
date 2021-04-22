@@ -40,10 +40,17 @@ public class EventListener implements Listener {
         int playersCount = Bukkit.getOnlinePlayers().size();
         double sleepingPlayersPercent = (double)sleepingPlayers.Count() * 100 / playersCount;
 
-        Bukkit.broadcastMessage(ChatColor.LIGHT_PURPLE + player.getName() + "" +
-                ChatColor.WHITE + " is sleeping");
-        Bukkit.broadcastMessage(ChatColor.LIGHT_PURPLE + "" + sleepingPlayersPercent + "" + "(" + LightSleep.percentNeedToSleep + ")/100%" +
-                ChatColor.WHITE + " of players is sleeping");
+        Bukkit.getScheduler().runTaskLater(LightSleep.getPlugin(), new Runnable() {
+
+            public void run() {
+                if(player.isSleeping()) {
+                    Bukkit.broadcastMessage(ChatColor.LIGHT_PURPLE + player.getName() + "" +
+                            ChatColor.WHITE + " is sleeping");
+                    Bukkit.broadcastMessage(ChatColor.LIGHT_PURPLE + "" + sleepingPlayersPercent + "" + "(" + LightSleep.percentNeedToSleep + ")/100%" +
+                            ChatColor.WHITE + " of players is sleeping");
+                }
+            }
+        }, 10);
 
         Bukkit.getScheduler().runTaskLater(LightSleep.getPlugin(), () -> {
 
@@ -57,7 +64,7 @@ public class EventListener implements Listener {
         }, 100);
     }
 
-    //Checking whenever player leave the bed and deleting gim from the map of sleeping players
+    //Checking whenever player leave the bed and deleting him from the map of sleeping players
     @EventHandler
     public void onWokeUp(PlayerBedLeaveEvent event) {
         Player player = event.getPlayer();
