@@ -46,7 +46,7 @@ public class EventListener implements Listener {
                 if(player.isSleeping()) {
                     Bukkit.broadcastMessage(ChatColor.LIGHT_PURPLE + player.getName() + "" +
                             ChatColor.WHITE + " is sleeping");
-                    Bukkit.broadcastMessage(ChatColor.LIGHT_PURPLE + "" + sleepingPlayersPercent + "" + "(" + LightSleep.percentNeedToSleep + ")/100%" +
+                    Bukkit.broadcastMessage(ChatColor.LIGHT_PURPLE + "" + (int)sleepingPlayersPercent + "" + "(" + LightSleep.percentNeedToSleep + ")/100%" +
                             ChatColor.WHITE + " of players is sleeping");
                 }
             }
