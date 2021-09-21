@@ -86,7 +86,7 @@ public final class LightSleep extends JavaPlugin {
             configWriter.close();
             System.out.println("Successfully wrote to the config file.");
         } catch (IOException e) {
-            System.out.println("An error occurred.");
+            System.out.println("An error occurred while saving data to the file.");
             e.printStackTrace();
         }
     }
