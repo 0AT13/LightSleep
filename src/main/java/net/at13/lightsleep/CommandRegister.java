@@ -18,14 +18,23 @@ public class CommandRegister implements CommandExecutor {
             if (sender instanceof Player && Integer.parseInt(args[0]) <= 100 && Integer.parseInt(args[0]) >= 0) {
 
                 LightSleep.percentNeedToSleep = Integer.parseInt(args[0]);
-                sender.sendMessage(ChatColor.BLUE + "[LightSleep]" + ChatColor.WHITE +  " Percent to sleep was changed to " + LightSleep.percentNeedToSleep + "%");
+                sender.sendMessage(
+                        ChatColor.BLUE + "[LightSleep]" +
+                        ChatColor.WHITE +  " Percent to sleep was changed to " + LightSleep.percentNeedToSleep + "%"
+                );
             }
             else {
-                sender.sendMessage(ChatColor.BLUE + "[LightSleep]" + ChatColor.WHITE + " Entered wrong value");
+                sender.sendMessage(
+                        ChatColor.BLUE + "[LightSleep]" +
+                        ChatColor.WHITE + " Entered wrong value"
+                );
             }
         } catch (NumberFormatException e) {
 
-            sender.sendMessage(ChatColor.BLUE + "[LightSleep]" + ChatColor.WHITE + " Entered wrong value");
+            sender.sendMessage(
+                    ChatColor.BLUE + "[LightSleep]" +
+                    ChatColor.WHITE + " Entered wrong value"
+            );
         }
 
         return true;

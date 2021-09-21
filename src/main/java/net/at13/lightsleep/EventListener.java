@@ -46,12 +46,14 @@ public class EventListener implements Listener {
                 if(player.isSleeping()) {
                     Bukkit.broadcastMessage(
                             ChatColor.LIGHT_PURPLE + player.getName() + "" +
-                            ChatColor.WHITE + " is sleeping");
+                            ChatColor.WHITE + " is sleeping"
+                    );
 
                     Bukkit.broadcastMessage(ChatColor.LIGHT_PURPLE + "[" + Bukkit.getServer().getName() + "]" +
                             ChatColor.BLUE + "[LightSleep] " +
                             ChatColor.LIGHT_PURPLE + "" + (int)sleepingPlayersPercent + "" + "(" + LightSleep.percentNeedToSleep + ")/100%" +
-                            ChatColor.WHITE + " of players is sleeping");
+                            ChatColor.WHITE + " of players is sleeping"
+                    );
                 }
             }
         }, 10);
@@ -78,7 +80,8 @@ public class EventListener implements Listener {
                 ChatColor.LIGHT_PURPLE + "[" + Bukkit.getServer().getName() + "]" +
                 ChatColor.BLUE + "[LightSleep] " +
                 ChatColor.LIGHT_PURPLE + player.getName() + "" +
-                ChatColor.WHITE + " woke up");
+                ChatColor.WHITE + " woke up"
+        );
 
         sleepingPlayers.removeSleepingState(playerUUID);
     }

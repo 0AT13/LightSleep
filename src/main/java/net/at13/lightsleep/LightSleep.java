@@ -67,7 +67,11 @@ public final class LightSleep extends JavaPlugin {
 
         getServer().getPluginManager().registerEvents(eventListener, this);
 
-        System.out.println(ChatColor.LIGHT_PURPLE + "[" + Bukkit.getServer().getName() + "]" + ChatColor.BLUE + "[LightSleep] " + ChatColor.WHITE + " LightSleep launched successfully - created by AT13");
+        System.out.println(
+                ChatColor.LIGHT_PURPLE + "[" + Bukkit.getServer().getName() + "]" +
+                ChatColor.BLUE + "[LightSleep] " +
+                ChatColor.WHITE + " LightSleep launched successfully - created by AT13"
+        );
     }
 
     public static Plugin getPlugin() {
